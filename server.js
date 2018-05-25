@@ -25,6 +25,8 @@ app.use(bodyParser.json());
 // ROUTER
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+// It is important to list the apiroutes file first 
+// because that is where we are pulling our data from to load our HTML pages
 // ================================================================================
 
 require("./app/routing/apiRoutes")(app);

@@ -25,7 +25,13 @@ module.exports = function(app) {
 
   
   // If no matching route is found default to home
-  app.get("*", function(req, res) {
+
+  // FIRST WAY TO DO THIS IS WITH app.get
+  // app.get("*", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/home.html"));
+  // });
+  // SECOND WAY TO DO THIS IS WITH app.use
+  app.use( function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 };
